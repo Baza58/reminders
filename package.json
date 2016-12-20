@@ -1,0 +1,8 @@
+{
+  "name": "Reminders",
+  "version": "0.0.1",
+  "description": "Reminders app build with node and react",
+  "main": "index.js",
+  "author": "Petr Bažout <bazout.p@gmail.com>",
+  "license": "MIT"
+}

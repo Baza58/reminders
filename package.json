@@ -4,5 +4,20 @@
   "description": "Reminders app build with node and react",
   "main": "index.js",
   "author": "Petr Bažout <bazout.p@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --outFile build/index.js index.ts",
+    "start": "nodemon --watch 'src/**/*.ts'  --exec 'ts-node' src/index.ts"
+  },
+  "devDependencies": {
+    "axios": "^0.7.0",
+    "typescript": "^1.6.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.4",
+    "lodash": "^3.10.1",
+    "nodemon": "^1.11.0",
+    "url": "^0.11.0"
+  }
 }

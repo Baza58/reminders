@@ -1,3 +1,13 @@
-import {foo} from './some-file';
+import express = require('express');
+import lodash = require('lodash');
 
-console.log(foo)
+const app = express();
+
+app.get('/foo', (req, res) => {
+
+    res.send('hello world')
+});
+
+app.listen(8080, () => {
+    console.log('App listening on port 8080');
+});

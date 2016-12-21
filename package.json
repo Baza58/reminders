@@ -14,6 +14,7 @@
     "typescript": "^1.6.2"
   },
   "dependencies": {
+    "@types/es6-promise": "0.0.32",
     "body-parser": "^1.15.2",
     "express": "^4.13.4",
     "jsonwebtoken": "^7.2.1",
@@ -21,6 +22,7 @@
     "mongoose": "^4.7.4",
     "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
+    "typings": "^2.1.0",
     "url": "^0.11.0"
   }
 }

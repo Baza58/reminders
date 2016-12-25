@@ -1,51 +1,61 @@
-import express = require('express');
-import lodash = require('lodash');
-import mongoose = require('mongoose');
-import bodyParser = require('body-parser');
+import App from './app';
 
-mongoose.connect('mongodb://localhost/test');
-(mongoose as any).Promise = global.Promise;
+new App();
 
-const UserSchema = new mongoose.Schema({
-  name: String,
-  password: String,
-});
+// import mongoose = require('mongoose');
+// import jwt = require('jsonwebtoken');
+// const expressJwt = require('express-jwt');
 
-const User = mongoose.model('User', UserSchema)
+// mongoose.connect('mongodb://localhost/test');
+// (mongoose as any).Promise = global.Promise;
 
-const Petr = new User({
-  name: 'Petr',
-  password: '1234',
-});
+// const UserSchema = new mongoose.Schema({
+//   name: String,
+//   password: String,
+// });
 
-const petr = saveUser(Petr);
+// const User = mongoose.model('User', UserSchema)
 
-console.log('petr yo', petr);
+// const Petr = new User({
+//   name: 'Petr',
+//   password: '1234',
+// });
 
-// Petr.save().then((x) => {
-//   console.log('yep', x);
+// // const petr = saveUser(Petr);
+
+// // const app = express();
+
+// // const secret: string = "ritknir";
+
+// // app.use('/api', expressJwt({ secret }));
+
+// // app.use(bodyParser.json());
+
+
+// app.post('/authenticate', (req, res) => {
+
+//   if(req.body.name !== 'johndoe' || req.body.password !== 'test') {
+//     res.sendStatus(401);
+//   }
+
+//  const token = jwt.sign(req.body, secret, {
+//    expiresIn: '2 minutes',
+//  });
+
+//   res.send({ token });
 // })
 
-const app = express();
+// app.get('/api/foo', (req, res) => {
 
-app.use(bodyParser.json());
+//   res.send(req.user.name)
+// })
 
-app.get('/foo', (req, res) => {
-  res.send('hello world')
-});
+// app.listen(8080, () => {
+//   console.log('App listening on port 8080');
+// });
 
-app.post('/users', (req, res) => {
-  console.log('params', req.body.name)
-
-  res.send(req.body)
-})
-
-app.listen(8080, () => {
-  console.log('App listening on port 8080');
-});
-
-async function saveUser(user) {
-  const savedUser = await user.save();
-  console.log('savedUser', savedUser)
-  return savedUser;
-}
+// async function saveUser(user) {
+//   const savedUser = await user.save();
+//   console.log('savedUser', savedUser)
+//   return savedUser;
+// }
